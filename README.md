@@ -33,11 +33,11 @@ Some key fields will be returned:
 
 - rds-endpoint
 
-## TF commands
+# TF commands
 
-# Plan
+## Plan
 terraform plan -out="tfplan.out"
-# Apply
+## Apply
 terraform apply "tfplan.out"
-# Destroy
+## Destroy
 terraform destroy -auto-approve
