@@ -21,38 +21,38 @@ resource "aws_db_instance" "rds_db" {
   engine                 = "postgres"
   engine_version         = "14.5"
   instance_class         = "db.t3.micro"
-  db_name                = var.databasename
+  db_name                = var.db_name
   username               = var.username
   password               = var.password
   vpc_security_group_ids = [aws_security_group.sg-db.id]
   db_subnet_group_name   = aws_db_subnet_group.subnetGroups.name
   availability_zone      = var.avaiable_zone
-  skip_final_snapshot  = true
-  identifier           = var.identifier
-  parameter_group_name = aws_db_parameter_group.rds_db_parameter_group.name
-  apply_immediately    = true
+  skip_final_snapshot    = true
+  identifier             = var.db_identifier
+  parameter_group_name   = aws_db_parameter_group.rds_db_parameter_group.name
+  apply_immediately      = true
   tags = {
-    Project     = var.project
-    AutoStart   = "Yes"
-    AutoStop    = "Yes"
+    Project   = var.project
+    AutoStart = "Yes"
+    AutoStop  = "Yes"
   }
 }
 
 resource "aws_db_subnet_group" "subnetGroups" {
-  name = "subnetgroups"
-  subnet_ids = var.private_subnet-ids
+  name       = "subnetgroups"
+  subnet_ids = var.private-subnet-ids
 
 
   tags = {
-    Name        = "Subnet Groups"
-    Project     = var.project
+    Name    = "Subnet Groups"
+    Project = var.project
   }
 }
 
 resource "aws_security_group" "sg-db" {
   name        = "${var.project}-sg-db"
   description = "Habilita acesso ao Banco para os servicos autorizados"
-  vpc_id      = var.vpc_id
+  vpc_id      = var.vpc-id
 
   ingress {
     description     = "Libera porta para Securitygroup do bastion host"
@@ -70,7 +70,7 @@ resource "aws_security_group" "sg-db" {
   }
 
   tags = {
-    Name        = "${var.project}-sg-db"
-    Project     = var.project
+    Name    = "${var.project}-sg-db"
+    Project = var.project
   }
 }
