@@ -15,7 +15,7 @@ Set the variables below according to your needs:
 - username
 - password
 
-# Example:
+## Example:
 
 - region                -> us-east-1
 - vpc-id                -> vpc-038bf2e0721bf2794
