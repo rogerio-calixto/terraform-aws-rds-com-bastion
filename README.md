@@ -17,15 +17,15 @@ Set the variables below according to your needs:
 
 ## Example:
 
-- region                -> us-east-1
-- vpc-id                -> vpc-038bf2e0721bf2794
-- private-avaiable_zone -> us-east-1a
+- region                -> "us-east-1"
+- vpc-id                -> "vpc-038bf2e0721bf2794"
+- private-avaiable_zone -> "us-east-1a"
 - private-subnet-ids    -> [ "subnet-06f3baf568aeb1973",  "subnet-0eda588007e5ab73f" ]
-- sg-bastion-host-id    -> sg-0da554cfb962c37fe
-- db_identifier         -> devops-rds
-- db_name               -> devops_db
-- username              -> devops
-- password              -> devops123
+- sg-bastion-host-id    -> "sg-0da554cfb962c37fe"
+- db_identifier         -> "devops-rds"
+- db_name               -> "devops_db"
+- username              -> "devops"
+- password              -> "devops123"
 
 # outputs
 
