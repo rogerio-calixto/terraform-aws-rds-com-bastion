@@ -1,5 +1,5 @@
 # terraform-aws-rds-com-bastion
-Create private rds instance with bastion host access
+Creates private rds instance with bastion host access
 
 # Instruction:
 
